@@ -25,6 +25,11 @@ jobs:
           npm install
           npm test
 
+      
+      - name: Run linting
+        run: npx eslint src
+      
+
       - name: Build project
         run: npm run build
 
