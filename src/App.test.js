@@ -3,8 +3,9 @@ import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  // "learn react" というテキストを探す代わりに、存在しないテキストを探させてテストを失敗させる
-  const linkElement = screen.getByText(/hogehoge/i); // この行を変更
+  const linkElement = screen.getByText(/learn react/i); // 元に戻す
   expect(linkElement).toBeInTheDocument();
 });
+
+
 
