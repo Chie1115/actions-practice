@@ -1,0 +1,16 @@
+name: Info Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  show-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print commit hash
+        run: echo "The commit hash is ${{ github.sha }}"
