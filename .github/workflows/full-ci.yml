@@ -28,14 +28,18 @@ jobs:
       - name: Run linting
         run: npx eslint src --max-warnings 0
 
+      # --- ここから変更 ---
       - name: Build project
+        if: github.ref == 'refs/heads/main'
         run: npm run build
 
       - name: Pipeline successful
         run: echo "Pipeline completed successfully!"
 
-      
       - name: Mock deployment
+        if: github.ref == 'refs/heads/main'
         run: echo "Deploying to production..."
+      # --- ここまで変更 ---
+
 
    
