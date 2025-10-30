@@ -20,6 +20,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # --- ここから追加 ---
+      - name: Print branch information
+        # ${{ github.ref_name }} はGitHubが自動で用意してくれる変数で、ブランチ名が入っています
+        run: echo "This workflow is running on branch ${{ github.ref_name }}"
+      # --- ここまで追加 ---
+
       - name: Run tests
         run: npm test
 
